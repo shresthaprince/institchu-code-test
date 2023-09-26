@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query"
 import { fetchAlbumPhotos } from "../../services/api"
 import PhotoCarousel from "./PhotoCarousel"
+import { AppHeader } from "../../components/common/AppText"
 
 const PhotoAlbumMain = () => {
     // Fetch photos
@@ -40,7 +41,7 @@ const PhotoAlbumMain = () => {
 const PhotoAlbum = () => {
     return (
         <div className="flex flex-auto flex-col gap-4">
-            <h1 className="font-monsterrat text-xl sm:text-3xl">Photo Album Task</h1>
+            <AppHeader>Photo Album Task</AppHeader>
             <PhotoAlbumMain />
         </div>
     )

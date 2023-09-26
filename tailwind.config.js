@@ -12,7 +12,8 @@ export default {
           primary: '#FFC107',
           secondary: '#FFA000',
         },
-        gray: '#F8F8F8'
+        gray: '#F8F8F8',
+        error: '#FF6B6B'
       },
       fontFamily: {
         monsterrat: ['Montserrat', 'sans-serif'],

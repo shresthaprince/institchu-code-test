@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 import { AppRoute } from "../AppRoutes"
 import { ReactNode } from "react"
+import { AppHeader } from "../components/common/AppText"
 
 interface SectionI {
     title: string,
@@ -26,7 +27,7 @@ const Section = ({ title, to, children }: SectionI) => {
 const Home = () => {
     return (
         <div className="flex flex-col gap-3">
-            <h1 className="font-monsterrat text-xl text-3xl">Institchu Code Test</h1>
+            <AppHeader>Institchu Code Test</AppHeader>
             <Section title="Task 1" to={AppRoute.TASK_1}>
                 <div className="text-base sm:text-lg">Photo album</div>
                 <p className="text-sm sm:text-base">Find out how https://jsonplaceholder.typicode.com/ REST API works and make a web page to display all photos in album id:1.</p>
