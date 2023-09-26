@@ -1,4 +1,4 @@
-import { Link, Outlet } from "react-router-dom"
+import { Link, NavLink, Outlet } from "react-router-dom"
 import { AppRoute } from "../AppRoutes"
 
 interface LinkItemI {
@@ -7,17 +7,17 @@ interface LinkItemI {
 }
 
 const LinkItem = ({ to, children }: LinkItemI) => {
-
+    const linkClassname = ({isActive}: {isActive: boolean}) => isActive ? '!text-[#FFA000]' : '' 
     return (
         <li className="float-left p-3 font-roboto nav-link">
-            <Link to={to}>{children}</Link>
+            <NavLink to={to} className={linkClassname}>{children}</NavLink>
         </li>
     )
 }
 
 const AppHeader = () => {
     return (
-        <header className="bg-primary px-5 py-4 flex flex-row items-center justify-between">
+        <header className="bg-primary px-5 py-4 xl:px-[20%] flex flex-col xs:flex-row xs:items-center xs:justify-between">
             <div>
                 <Link to={AppRoute.HOME} className="font-monsterrat text-white font-bold text-2xl">Code Test</Link>
             </div>
@@ -33,7 +33,7 @@ const AppHeader = () => {
 
 const AppFooter = () => {
     return (
-        <footer className="bg-gray px-5 py-4 flex flex-row justify-end">
+        <footer className="bg-gray px-5 py-4 xl:px-[20%] flex flex-row justify-end">
             <div>
                 <span className="font-roboto text-xs text-[#555]">By Prince Shrestha</span>
             </div>
@@ -45,7 +45,7 @@ const Root = () => {
     return (
         <>
             <AppHeader />
-            <main className="px-4 py-5">
+            <main className="flex flex-auto px-4 py-5 xl:px-[20%]">
                 <Outlet />
             </main>
             <AppFooter />

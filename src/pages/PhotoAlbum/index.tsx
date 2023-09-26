@@ -7,10 +7,11 @@ const PhotoAlbumMain = () => {
     const {data, isInitialLoading, isError, refetch} = useQuery({queryKey: ['photos'], queryFn: fetchAlbumPhotos})
 
     if (isError) {
+        const handleRetry = () => refetch()
         return (
-            <section>
-                <h2>Something went wrong...</h2>
-                <button onClick={() => refetch()}>Retry</button>
+            <section className="flex flex-col gap-2 items-start">
+                <h2 className="font-monsterrat font-bold">Something went wrong...</h2>
+                <button className="px-3 py-2 bg-accent-primary text-white rounded-md" onClick={handleRetry}>Retry</button>
             </section>
         )
     }
@@ -18,7 +19,7 @@ const PhotoAlbumMain = () => {
     if (isInitialLoading) {
         return (
             <section>
-                <h2>Loading...</h2>
+                <h2 className="font-monsterrat font-bold">Loading...</h2>
             </section>
         )
     }
@@ -26,7 +27,7 @@ const PhotoAlbumMain = () => {
     if (!data || data.length === 0) {
         return (
             <section>
-                <h2>No photos found.</h2>
+                <h2 className="font-monsterrat font-bold">No photos found.</h2>
             </section>
         )
     }
@@ -38,10 +39,10 @@ const PhotoAlbumMain = () => {
 
 const PhotoAlbum = () => {
     return (
-        <>
-            <h1>Photo Album Task</h1>
+        <div className="flex flex-auto flex-col gap-4">
+            <h1 className="font-monsterrat text-xl sm:text-3xl">Photo Album Task</h1>
             <PhotoAlbumMain />
-        </>
+        </div>
     )
 }
 

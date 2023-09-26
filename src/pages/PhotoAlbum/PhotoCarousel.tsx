@@ -16,18 +16,19 @@ const PhotoCarousel = ({ photos }: PhotoCarouselI) => {
     ), [photos])
 
     return (
-        <section>
-            <h2>Photo Carousel</h2>
-            <Carousel infiniteLoop transitionTime={500} renderThumbs={renderThumbnails}>
-                {
-                    photos.map(({ id, url, title }) => (
-                        <div key={id}>
-                            <img alt={title} src={url} />
-                            <p className="legend">{title}</p>
-                        </div>
-                    ))
-                }
-            </Carousel>
+        <section className='flex flex-col flex-1 items-center'>
+            <div className='w-full max-w-[600px]'>
+                <Carousel className='max-h-fit max-w-fit' infiniteLoop transitionTime={500} showIndicators={false} renderThumbs={renderThumbnails}>
+                    {
+                        photos.map(({ id, url, title }) => (
+                            <div key={id}>
+                                <img alt={title} src={url} />
+                            </div>
+                        ))
+                    }
+                </Carousel>
+            </div>
+
         </section>
     )
 }

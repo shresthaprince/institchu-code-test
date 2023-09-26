@@ -17,6 +17,9 @@ export default {
       fontFamily: {
         monsterrat: ['Montserrat', 'sans-serif'],
         roboto: ['Roboto', 'sans-serif'],
+      },
+      screens: {
+        xs: '375px',
       }
     },
   },

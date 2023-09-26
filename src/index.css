@@ -21,3 +21,7 @@ html, body, #root, main {
 .nav-link a:hover {
   color: #555;
 }
+
+.carousel-status {
+  font-family: 'Monsterrat', sans-serif;
+}
