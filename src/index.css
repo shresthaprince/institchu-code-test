@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  height: 100%;
+}
+body {
+  margin: 0px;
+  font-family: 'Roboto', sans-serif;
+}
+html, body, #root, main {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+}
+
+.nav-link a {
+  color: #333;
+}
+.nav-link a:hover {
+  color: #555;
+}
