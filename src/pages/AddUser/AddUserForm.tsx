@@ -52,7 +52,7 @@ const AddUserForm = () => {
     })
 
     const onSubmit = handleSubmit(async (data) => mutate(data))
-    
+
     return (
         <form className="bg-gray rounded-lg p-5 flex flex-col gap-3" id="add-user-form" onSubmit={onSubmit}>
             <TextField
