@@ -7,7 +7,7 @@ interface LinkItemI {
 }
 
 const LinkItem = ({ to, children }: LinkItemI) => {
-    const linkClassname = ({isActive}: {isActive: boolean}) => isActive ? '!text-[#FFA000]' : '' 
+    const linkClassname = ({ isActive }: { isActive: boolean }) => isActive ? '!text-[#FFA000]' : ''
     return (
         <li className="float-left p-3 font-roboto nav-link">
             <NavLink to={to} className={linkClassname}>{children}</NavLink>

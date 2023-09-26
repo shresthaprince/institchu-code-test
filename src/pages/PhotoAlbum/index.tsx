@@ -5,7 +5,7 @@ import { AppHeader } from "../../components/common/AppText"
 
 const PhotoAlbumMain = () => {
     // Fetch photos
-    const {data, isInitialLoading, isError, refetch} = useQuery({queryKey: ['photos'], queryFn: fetchAlbumPhotos})
+    const { data, isInitialLoading, isError, refetch } = useQuery({ queryKey: ['photos'], queryFn: fetchAlbumPhotos })
 
     if (isError) {
         const handleRetry = () => refetch()
